@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Market At Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Market At Home</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li> <a href="#">Sobre</a> </li>
+                <li> <a href="supermercado.html">Supermercado</a> </li>
+                <li> <a href="#">Contato</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+                <li><a href="cadastrarCliente.html"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="login-overlay" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Market At Home</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="well">
+                            <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                <div class="form-group">
+                                    <label for="username" class="control-label">Usuário</label>
+                                    <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username"
+                                        placeholder="example@gmail.com">
+                                    <span class="help-block"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="control-label">Senha</label>
+                                    <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                    <span class="help-block"></span>
+                                </div>
+                                <div id="loginErrorMsg" class="alert alert-error hide">Usuário ou Senha Errados</div>
+                                <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" name="remember" id="remember"> Lembrar login
+                                  </label>
+                                    <p class="help-block">(se esse for um computador privado)</p>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block">Entrar</button>
+                                <a href="/forgot/" class="btn btn-default btn-block">Ajuda</a>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="lead">Cadastre-se agora <span class="text-success">GRÁTIS</span></p>
+                        <ul class="list-unstyled" style="line-height: 2">
+                            <li><span class="fa fa-check text-success"></span> Veja todos os seus pedidos</li>
+                            <li><span class="fa fa-check text-success"></span> Tenha o supermercado na palma da mão</li>
+                            <li><span class="fa fa-check text-success"></span> Salve seus produtos favoritos</li>
+                            <li><span class="fa fa-check text-success"></span> Fácil forma de finalização</li>
+                            <li><span class="fa fa-check text-success"></span> Ganhe um presente <small>(apenas novos clientes)</small></li>
+                            <li>
+                                <a href="/read-more/">
+                                    <u>Leia Mais</u>
+                                </a>
+                            </li>
+                        </ul>
+                        <p><a href="/new-customer/" class="btn btn-info btn-block">Sim, Quero me registrar agora!</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

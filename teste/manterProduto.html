@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Market At Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Market At Home</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li> <a href="manterProduto.html">Manter Produto</a> </li>
+                <li> <a href="supermercado.html">Supermercado</a> </li>
+                <li> <a href="#">Contato</a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h3>Lista de Produtos</h3>
+        <button class="btn btn-success" type="button"><a href="cadastrarProduto.html">Novo</a> <span class="glyphicon glyphicon-plus"></span></button>
+        <table class="table">
+            <tr>
+                <th>Foto</th>
+                <th>Título</th>
+                <th>Preço</th>
+                <th>Opções</th>
+            </tr>
+            <tr>
+                <td>
+                    <img src="arroz.jpg" height=100 width=100></img>
+                </td>
+                <td><strong>Arroz Branco Tipo 1 - 5kg</strong></td>
+                <td>R$10.79</td>
+                <td>
+                    <button type="button" class=" btn btn-info"> 
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button type="button" class=" btn btn-danger"> 
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="leite.jpg" height=100 width=100></img>
+                </td>
+                <td><strong>Leite Ninho Fortificado</strong></td>
+                <td>R$14.99</td>
+                <td>
+                    <button type="button" class=" btn btn-info"> 
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button type="button" class=" btn btn-danger"> 
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="tomate.jpg" height=100 width=100></img>
+                </td>
+                <td><strong>Tomate Vermelho</strong></td>
+                <td>R$6.99/Kg</td>
+                <td>
+                    <button type="button" class=" btn btn-info"> 
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button type="button" class=" btn btn-danger"> 
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="nutella.jpg" height=100 width=100></img>
+                </td>
+                <td><strong>Creme de Avelã - Nutella 500g</strong></td>
+                <td>R$12.50</td>
+                <td>
+                    <button type="button" class=" btn btn-info"> 
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                    <button type="button" class=" btn btn-danger"> 
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Mensagem de sucesso</button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Exclusão de Produto</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Produto: Creme de Avelã - Nutella 500g</p>
+                        <p>Preço: $12.50</p>
+                        <p>Excluído com sucesso!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Exclusão de Produto</h4>
+                </div>
+
+                <div class="modal-body">
+                    <p>Você está prestes a excluir um produto</p>
+                    <p>Tem certeza que quer proceder?</p>
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-danger btn-ok">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <button class="btn btn-default" data-href="/delete.php?id=54" data-toggle="modal" data-target="#confirm-delete">
+        Delete record #54
+    </button>
+
+
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function (e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+
+            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>
+</body>
+
+</html>
